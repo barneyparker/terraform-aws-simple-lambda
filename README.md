@@ -14,7 +14,7 @@ module "lambda" {
   description  = "My Lambda Function"
   handler      = "index.handler"
   runtime      = "nodejs18.x"
-  source_path  = "${path.module}/function/my-lambda"
+  source_dir   = "${path.module}/function/my-lambda"
   architecture = "arm64
 
   env_vars = {
@@ -55,5 +55,6 @@ data "aws_iam_policy_document" "example" {
 
 | Name | Description |
 |------|-------------|
+| name | The Name of the Lambda Function. |
 | arn | The ARN of the Lambda Function. |
-| name | The name of the Lambda Function. |
+| invoke_arn | The Invoke ARN of the Lambda Function. |

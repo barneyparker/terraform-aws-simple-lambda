@@ -48,9 +48,11 @@ variable "architecture" {
 variable "env_vars" {
   type        = map(string)
   description = "Environment variables to set for the function"
+  default     = {}
 }
 
 variable "policies" {
   type        = list(string)
   description = "Additional policies to attach to the function role"
+  default     = []
 }

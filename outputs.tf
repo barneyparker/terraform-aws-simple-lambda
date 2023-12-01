@@ -1,7 +1,11 @@
-output "function_name" {
+output "name" {
   value = aws_lambda_function.this.function_name
 }
 
-output "function_arn" {
+output "arn" {
   value = aws_lambda_function.this.arn
+}
+
+output "invoke_arn" {
+  value = aws_lambda_function.this.invoke_arn
 }
