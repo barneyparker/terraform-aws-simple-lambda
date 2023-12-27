@@ -12,11 +12,13 @@ variable "description" {
 variable "handler" {
   type        = string
   description = "The name of the function handler"
+  default     = "index.handler"
 }
 
 variable "runtime" {
   type        = string
   description = "The runtime to use for the function"
+  default     = "nodejs20.x"
 }
 
 variable "source_dir" {
@@ -33,16 +35,19 @@ variable "log_retention" {
 variable "memory_size" {
   type        = number
   description = "The amount of memory to allocate to the function"
+  default     = "128"
 }
 
 variable "timeout" {
   type        = number
   description = "The amount of time to allow the function to run"
+  default     = 3
 }
 
 variable "architecture" {
   type        = string
   description = "The architecture to use for the function"
+  default     = "arm64"
 }
 
 variable "env_vars" {

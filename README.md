@@ -41,13 +41,13 @@ data "aws_iam_policy_document" "example" {
 |------|-------------|------|---------|:--------:|
 | name | The name of the Lambda Function. | `string` | n/a | yes |
 | description | The description of the Lambda Function. | `string` | `""` | no |
-| handler | The handler of the Lambda Function. | `string` | n/a | yes |
-| runtime | The runtime of the Lambda Function. | `string` | n/a | yes |
+| handler | The handler of the Lambda Function. | `string` | `index.handler` | no |
+| runtime | The runtime of the Lambda Function. | `string` | `nodejs20.x` | no |
 | source\_dir | The path to the Lambda Function source code. | `string` | n/a | yes |
 | log\_retention | The number of days to retain logs for. | `number` | `7` | no |
 | memory\_size | The memory size of the Lambda Function. | `number` | `128` | no |
 | timeout | The timeout of the Lambda Function. | `number` | `3` | no |
-| architecture | The architecture of the Lambda Function. | `string` | `"x86_64"` | no |
+| architecture | The architecture of the Lambda Function. | `string` | `"arm64"` | no |
 | env\_vars | A map of environment variables to pass to the Lambda Function. | `map(string)` | `{}` | no |
 | policies | A list of IAM policies to attach to the Lambda Function. | `list(string)` | `[]` | no |
 
