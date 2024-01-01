@@ -1,7 +1,7 @@
 resource "aws_iam_role" "this" {
   name                 = var.name
   assume_role_policy   = data.aws_iam_policy_document.lambda_assume.json
-  permissions_boundary = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:policy/GELBoundary"
+  permissions_boundary = var.boundary_policy_arn
 
   inline_policy {
     name   = "Permissions"

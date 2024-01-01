@@ -50,6 +50,7 @@ data "aws_iam_policy_document" "example" {
 | architecture | The architecture of the Lambda Function. | `string` | `"arm64"` | no |
 | env\_vars | A map of environment variables to pass to the Lambda Function. | `map(string)` | `{}` | no |
 | policies | A list of IAM policies to attach to the Lambda Function. | `list(string)` | `[]` | no |
+| boundary_policy_arn | The ARN of the IAM policy to use as a boundary policy for the Lambda Function. | `string` | `null` | no |
 
 ## Outputs
 

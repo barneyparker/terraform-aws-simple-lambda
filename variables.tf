@@ -61,3 +61,10 @@ variable "policies" {
   description = "Additional policies to attach to the function role"
   default     = []
 }
+
+variable "boundary_policy_arn" {
+  type        = string
+  description = "Boundary policy ARN to attach to the function role"
+  default     = null
+
+}
