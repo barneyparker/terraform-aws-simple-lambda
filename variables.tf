@@ -66,5 +66,35 @@ variable "boundary_policy_arn" {
   type        = string
   description = "Boundary policy ARN to attach to the function role"
   default     = null
+}
 
+## Schedule related variables
+variable "schedule_expression" {
+  type        = string
+  description = "The schedule expression for the rule"
+  default     = null
+}
+
+variable "schedule_payload" {
+  type        = map(string)
+  description = "The payload to pass to the scheduled function"
+  default     = {}
+}
+
+variable "schedule_timezone" {
+  type        = string
+  description = "The timezone for the schedule"
+  default     = "Europe/London"
+}
+
+variable "schedule_start_date" {
+  type        = string
+  description = "The start date for the schedule"
+  default     = null
+}
+
+variable "schedule_end_date" {
+  type        = string
+  description = "The end date for the schedule"
+  default     = null
 }
