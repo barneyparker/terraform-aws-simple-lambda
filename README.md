@@ -56,6 +56,8 @@ data "aws_iam_policy_document" "example" {
 | schedule_timezone | The timezone for the schedule expression. | `string` | `"Europe/London"` | no |
 | schedule_start_date | The start date for the schedule. | `string` | `null` | no |
 | schedule_end_date | The end date for the schedule. | `string` | `null` | no |
+| event_pattern | The event pattern for the event rule. | `string` | `null` | no |
+| event_bus_name | The name of the event bus to use for the event rule. | `string` | `default` | no |
 
 ## Outputs
 

@@ -1,4 +1,4 @@
-resource "aws_lambda_permission" "this" {
+resource "aws_lambda_permission" "schedule" {
   count = var.schedule_expression != null ? 1 : 0
 
   statement_id  = "AllowExecutionFromCloudWatchSchedule"
@@ -11,7 +11,7 @@ resource "aws_lambda_permission" "this" {
 resource "aws_scheduler_schedule" "this" {
   count = var.schedule_expression != null ? 1 : 0
 
-  name                         = "${title(var.name)} Schedule"
+  name                         = "${title(var.name)}-Schedule"
   state                        = "ENABLED"
   schedule_expression          = var.schedule_expression
   schedule_expression_timezone = var.schedule_timezone

@@ -98,3 +98,16 @@ variable "schedule_end_date" {
   description = "The end date for the schedule"
   default     = null
 }
+
+## Event related variables
+variable "event_pattern" {
+  type        = string
+  description = "The event pattern to use for the event rule"
+  default     = null
+}
+
+variable "event_bus_name" {
+  type        = string
+  description = "The name of the event bus to use for the event rule"
+  default     = "default"
+}
