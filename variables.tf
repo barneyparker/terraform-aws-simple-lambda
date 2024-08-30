@@ -68,6 +68,38 @@ variable "boundary_policy_arn" {
   default     = null
 }
 
+variable "log_group" {
+  type        = string
+  description = "The name of the log group to use for the function or null for default"
+  default     = null
+}
+
+variable "log_json" {
+  type        = bool
+  description = "true for JSON logging, false for standard"
+  default     = false
+}
+
+variable "app_log_level" {
+  type        = string
+  description = "The log level for the application"
+  default     = "INFO"
+  validation {
+    condition     = can(regex("^(DEBUG|INFO|WARN|ERROR|FATAL)$", var.app_log_level))
+    error_message = "app_log_level must be one of DEBUG, INFO, WARN, ERROR, FATAL"
+  }
+}
+
+variable "sys_log_level" {
+  type        = string
+  description = "The log level for the system"
+  default     = "INFO"
+  validation {
+    condition     = can(regex("^(DEBUG|INFO|WARN)$", var.sys_log_level))
+    error_message = "sys_log_level must be one of DEBUG, INFO, WARN"
+  }
+}
+
 ## Schedule related variables
 variable "schedule_expression" {
   type        = string

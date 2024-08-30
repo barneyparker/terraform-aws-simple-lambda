@@ -9,6 +9,6 @@
  * @return {boolean}        true
  */
 export const handler = (event) => {
-  console.log(JSON.stringify(event, null, 2))
+  console.log(event)
   return true
 }

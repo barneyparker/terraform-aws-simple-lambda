@@ -6,6 +6,18 @@ module "simple_function" {
   source_dir  = "${path.module}/src"
 }
 
+module "json_log_function" {
+  source = "../"
+
+  name          = "json-log-function"
+  description   = "A function that logs in JSON format"
+  source_dir    = "${path.module}/src"
+  log_group     = "/barney/lambda/log"
+  log_json      = true
+  app_log_level = "DEBUG"
+  sys_log_level = "WARN"
+}
+
 
 module "scheduled_function" {
   source = "../"
