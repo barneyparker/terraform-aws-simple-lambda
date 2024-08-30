@@ -100,6 +100,12 @@ variable "sys_log_level" {
   }
 }
 
+variable "log_infrequent" {
+  type        = bool
+  description = "True for Infrequence Access log class"
+  default     = false
+}
+
 ## Schedule related variables
 variable "schedule_expression" {
   type        = string
