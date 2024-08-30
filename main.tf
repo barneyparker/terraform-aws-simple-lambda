@@ -29,7 +29,7 @@ resource "aws_lambda_function" "this" {
 }
 
 resource "aws_cloudwatch_log_group" "this" {
-  name              = var.log_json ? var.log_group : "/aws/lambda/${aws_lambda_function.this.function_name}"
+  name              = var.log_json ? var.log_group != null ? var.log_group : "/aws/lambda/${aws_lambda_function.this.function_name}" : "/aws/lambda/${aws_lambda_function.this.function_name}"
   retention_in_days = var.log_retention
   log_group_class   = var.log_infrequent ? "INFREQUENT_ACCESS" : "STANDARD"
 }
