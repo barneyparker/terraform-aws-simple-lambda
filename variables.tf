@@ -149,3 +149,9 @@ variable "event_bus_name" {
   description = "The name of the event bus to use for the event rule"
   default     = "default"
 }
+
+variable "layers" {
+  type        = list(string)
+  description = "list of layers to add to the lambda function"
+  default     = []
+}
