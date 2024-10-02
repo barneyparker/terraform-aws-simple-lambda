@@ -2,6 +2,7 @@ data "archive_file" "this" {
   type        = "zip"
   source_dir  = var.source_dir
   output_path = "${path.root}/.terraform/${var.name}.zip"
+  excludes    = ["**/*.test.*"] # ignore test files
 }
 
 resource "aws_lambda_function" "this" {
