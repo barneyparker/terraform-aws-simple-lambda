@@ -155,3 +155,13 @@ variable "layers" {
   description = "list of layers to add to the lambda function"
   default     = []
 }
+
+variable "tracing_mode" {
+  type        = string
+  description = "The tracing mode to use for the function"
+  default     = "PassThrough"
+  validation {
+    condition     = can(regex("^(Active|PassThrough)$", var.tracing_mode))
+    error_message = "tracing_mode must be one of Active, PassThrough"
+  }
+}

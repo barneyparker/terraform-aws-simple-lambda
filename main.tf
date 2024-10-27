@@ -28,6 +28,10 @@ resource "aws_lambda_function" "this" {
     application_log_level = var.log_json ? var.app_log_level : null
     system_log_level      = var.log_json ? var.sys_log_level : null
   }
+
+  tracing_config {
+    mode = var.tracing_mode
+  }
 }
 
 resource "aws_cloudwatch_log_group" "this" {
